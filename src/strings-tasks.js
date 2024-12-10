@@ -57,7 +57,7 @@ function isString(value) {
  *   concatenateStrings('', 'bb') => 'bb'
  */
 function concatenateStrings(value1, value2) {
-  return value1 + value2;
+  return value1.concat(value2);
 }
 
 /**
@@ -245,12 +245,9 @@ function endsWith(str, substr) {
  *   formatTime(0, 0) => "00:00"
  */
 function formatTime(minutes, seconds) {
-  function addZero(num) {
-    return num < 10 ? `0${num}` : num;
-  }
+  const addZero = (num) => num.toString().padStart(2, '0');
   return `${addZero(minutes)}:${addZero(seconds)}`;
 }
-
 /**
  * Returns a string in reverse order.
  *
